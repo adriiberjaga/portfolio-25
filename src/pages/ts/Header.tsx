@@ -13,7 +13,6 @@ export default function Header() {
         <NavLink to="/">Contact</NavLink>
       </nav>
       </div>
-      
     </header>
   );
 }
