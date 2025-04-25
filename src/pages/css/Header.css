@@ -4,14 +4,18 @@
     display: flex;
     align-items: center;
     text-transform: capitalize;
-    padding: 0 7rem;
+    padding: 10px 5%;
     color: white;
+}
+.header-title{
+    text-transform: uppercase;
 }
 .header-border{
     display: flex;
+    align-items: center;
     justify-content: center;
     width: 100%;
-    border: 1px solid rgb(255, 255, 255);
+    border: 1px solid rgba(255, 255, 255, 0.575);
     border-radius: 12px;
     justify-content: space-between;
     padding: 20px;
@@ -19,9 +23,83 @@
 .header-navbar{
     display: flex;
     gap: 20px;
+    transition: transform 0.5s ease-in-out, opacity 0.5S ease-in-out; 
+
 }
 .header-navbar :any-link{
     color: rgb(255, 255, 255);
     text-decoration: none;
     text-transform: uppercase;
 }
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+  }
+  .header-btn__close{
+    z-index: 1;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+  }
+  
+  @media(max-width:900px) {
+    .header-title{
+        font-size: 1.2rem;
+    }
+    .header-navbar :any-link{
+        font-size: 0.8rem
+    }
+  }
+  /* Media query para pantallas pequeñas */
+  @media (max-width: 768px) {
+
+    .header-navbar {
+      flex-direction: column; /* Apilar los elementos de navegación verticalmente */
+      width: 100%;
+      align-items:  center ;
+      justify-content: start;
+      padding-top: 110px;
+      height: 100%;
+      position: absolute;
+      top: 0; 
+      left: 0;
+      gap: 10px;
+      transform: translateX(100%);
+      opacity: 0;
+    }
+  
+    /* Mostrar el menú cuando está abierto */
+    .header-navbar.open {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  
+    /* Mostrar el icono de hamburguesa */
+    .hamburger {
+      display: block;
+    }
+  
+    .header-navbar a {
+      font-size: 1.2rem; /* Mejorar el tamaño de los enlaces */
+      padding: 10px;
+    }
+  }
+  
+  /* Media query para pantallas grandes */
+  @media (min-width: 768px) {
+    .header-navbar {
+      display: flex; /* Mostrar los enlaces horizontalmente */
+      gap: 20px;
+    }
+  
+    .hamburger {
+      display: none; /* Ocultar el menú hamburguesa en pantallas grandes */
+    }
+  }

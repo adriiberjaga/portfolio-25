@@ -1,8 +1,14 @@
+@font-face {
+  font-family: 'MiFuente';
+  src: url('../public/fonts/Ubuntu-Regular.ttf') format('truetype');
+}
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   background-color: #111723;
+  font-family: MiFuente, sans-serif;
+
   }
   
   
